@@ -10,9 +10,8 @@ const Contact = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="glass-panel"
+        className="glass-panel contact-box"
         style={{ 
-          padding: '5rem 3rem', 
           textAlign: 'center', 
           background: 'radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(30, 41, 59, 0.8) 70%)',
           border: '1px solid rgba(99, 102, 241, 0.3)',
@@ -24,7 +23,7 @@ const Contact = () => {
           I'm currently seeking roles where I can leverage my skills in Data Visualization, Analytics, and AI to solve real business problems. Let's connect!
         </p>
         
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem' }}>
+        <div className="contact-links">
           <motion.a 
             whileHover={{ y: -5 }}
             href="mailto:sushantv355@gmail.com" 

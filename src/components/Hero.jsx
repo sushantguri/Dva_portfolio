@@ -5,7 +5,7 @@ import { Database, LineChart, ChevronDown } from 'lucide-react';
 const Hero = () => {
   return (
     <section id="home" className="section container" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '4rem', alignItems: 'center', width: '100%' }}>
+      <div className="hero-grid">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -19,7 +19,7 @@ const Hero = () => {
           >
             Data Visualization & Analytics
           </motion.div>
-          <h1 style={{ fontSize: '5rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 className="hero-title">
             Hi, I'm <br/><span className="text-gradient">Sushant</span>
           </h1>
           <h3 style={{ fontSize: '1.75rem', color: 'var(--text-muted)', marginBottom: '2rem', fontWeight: 400 }}>

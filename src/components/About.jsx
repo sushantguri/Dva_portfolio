@@ -20,7 +20,7 @@ const About = () => {
       >
         <h2 className="section-title">Technical Expertise</h2>
         
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '5rem', alignItems: 'center' }}>
+        <div className="about-grid">
           <div>
             <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
               Bridging the gap between raw datasets and <span className="text-gradient">actionable intelligence</span>.
@@ -30,7 +30,7 @@ const About = () => {
             </p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <div className="skills-grid">
             {skills.map((skill, index) => (
               <motion.div 
                 key={index}

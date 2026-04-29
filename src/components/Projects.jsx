@@ -69,9 +69,9 @@ const Projects = () => {
             >
               <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'linear-gradient(to bottom, var(--cyan), var(--indigo))' }}></div>
               
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
+              <div className="project-header">
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  <div className="project-header-title">
                     <div style={{ color: 'var(--cyan)' }}>{project.icon}</div>
                     <h3 style={{ fontSize: '2.25rem', lineHeight: 1.1 }}>{project.title}</h3>
                   </div>
@@ -96,7 +96,7 @@ const Projects = () => {
                 {project.description}
               </p>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+              <div className="project-content-grid">
                 <div>
                   <h4>Problem & Stakeholder Context</h4>
                   <p>{project.problem}</p>
