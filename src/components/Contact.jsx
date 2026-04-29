@@ -9,45 +9,56 @@ const Contact = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         className="glass-panel"
-        style={{ padding: '4rem', textAlign: 'center', background: 'linear-gradient(180deg, rgba(18,25,30,0.7) 0%, rgba(10,15,18,0.9) 100%)' }}
+        style={{ 
+          padding: '5rem 3rem', 
+          textAlign: 'center', 
+          background: 'radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(30, 41, 59, 0.8) 70%)',
+          border: '1px solid rgba(99, 102, 241, 0.3)',
+          boxShadow: '0 20px 40px -20px rgba(99, 102, 241, 0.3)'
+        }}
       >
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Let's Analyze Together</h2>
-        <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 3rem auto', fontSize: '1.125rem' }}>
-          Interested in extracting value from your data? Looking for a data-driven AI student? I'm currently open to new opportunities. Let's connect!
+        <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', fontFamily: 'Outfit, sans-serif' }}>Let's Build <span className="text-gradient">Data Pipelines</span></h2>
+        <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 4rem auto', fontSize: '1.2rem', lineHeight: 1.8 }}>
+          I'm currently seeking roles where I can leverage my skills in Data Visualization, Analytics, and AI to solve real business problems. Let's connect!
         </p>
         
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem' }}>
-          <a href="mailto:sushantv355@gmail.com" style={{
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem',
-            color: 'var(--text-muted)', transition: 'color 0.3s'
-          }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent-emerald)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-muted)'}>
-            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Mail size={24} />
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem' }}>
+          <motion.a 
+            whileHover={{ y: -5 }}
+            href="mailto:sushantv355@gmail.com" 
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'var(--text-muted)' }}
+          >
+            <div className="glass-panel" style={{ width: '70px', height: '70px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--cyan)', background: 'rgba(6, 182, 212, 0.1)', color: 'var(--cyan)' }}>
+              <Mail size={28} />
             </div>
-            <span>Email</span>
-          </a>
+            <span style={{ fontWeight: 500 }}>Email</span>
+          </motion.a>
           
-          <a href="https://github.com/sushantguri" target="_blank" rel="noreferrer" style={{
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem',
-            color: 'var(--text-muted)', transition: 'color 0.3s'
-          }} onMouseOver={e => e.currentTarget.style.color = 'var(--text-main)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-muted)'}>
-            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Code size={24} />
+          <motion.a 
+            whileHover={{ y: -5 }}
+            href="https://github.com/sushantguri" 
+            target="_blank" rel="noreferrer" 
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'var(--text-muted)' }}
+          >
+            <div className="glass-panel" style={{ width: '70px', height: '70px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }}>
+              <Code size={28} />
             </div>
-            <span>GitHub</span>
-          </a>
+            <span style={{ fontWeight: 500 }}>GitHub</span>
+          </motion.a>
           
-          <a href="https://www.linkedin.com/in/sushant-guri/" target="_blank" rel="noreferrer" style={{
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem',
-            color: 'var(--text-muted)', transition: 'color 0.3s'
-          }} onMouseOver={e => e.currentTarget.style.color = '#0a66c2'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-muted)'}>
-            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Briefcase size={24} />
+          <motion.a 
+            whileHover={{ y: -5 }}
+            href="https://www.linkedin.com/in/sushant-guri/" 
+            target="_blank" rel="noreferrer" 
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'var(--text-muted)' }}
+          >
+            <div className="glass-panel" style={{ width: '70px', height: '70px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--indigo)', background: 'rgba(99, 102, 241, 0.1)', color: 'var(--indigo)' }}>
+              <Briefcase size={28} />
             </div>
-            <span>LinkedIn</span>
-          </a>
+            <span style={{ fontWeight: 500 }}>LinkedIn</span>
+          </motion.a>
         </div>
       </motion.div>
     </section>

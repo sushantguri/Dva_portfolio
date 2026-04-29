@@ -1,93 +1,94 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Database, LineChart, Activity } from 'lucide-react';
+import { Database, LineChart, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
     <section id="home" className="section container" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '4rem', alignItems: 'center', width: '100%' }}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 style={{ color: 'var(--accent-emerald)', fontSize: '1.25rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            style={{ color: 'var(--cyan)', fontSize: '1.1rem', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 600 }}
+          >
             Data Visualization & Analytics
-          </h2>
-          <h1 style={{ fontSize: '4.5rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Hi, I'm <span className="text-gradient">Sushant</span>
+          </motion.div>
+          <h1 style={{ fontSize: '5rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Hi, I'm <br/><span className="text-gradient">Sushant</span>
           </h1>
-          <h3 style={{ fontSize: '2rem', color: 'var(--text-muted)', marginBottom: '2rem', fontWeight: 400 }}>
+          <h3 style={{ fontSize: '1.75rem', color: 'var(--text-muted)', marginBottom: '2rem', fontWeight: 400 }}>
             CS AI Student & Data Storyteller
           </h3>
-          <p style={{ fontSize: '1.125rem', color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '500px' }}>
-            I transform raw, messy data into structured operational intelligence. Specializing in ETL pipelines, NLP, and interactive dashboards that drive decision-making.
+          <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '550px', lineHeight: 1.8 }}>
+            I specialize in transforming raw datasets into structured, operational intelligence. From building Python ETL pipelines to deploying interactive Tableau BI suites.
           </p>
           
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <a href="#projects" className="glass-panel" style={{ 
-              padding: '1rem 2rem', 
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{ display: 'inline-block' }}
+          >
+            <a href="#case-studies" className="glass-panel" style={{ 
+              padding: '1.25rem 2.5rem', 
               display: 'inline-flex', 
               alignItems: 'center', 
-              gap: '0.5rem',
+              gap: '0.75rem',
               fontWeight: 600,
               color: '#fff',
-              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%)',
-              border: '1px solid var(--accent-emerald)'
+              background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%)',
+              border: '1px solid var(--cyan)'
             }}>
-              <LineChart size={20} />
-              View Analytics Projects
+              <LineChart size={22} />
+              View Case Studies
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          style={{ position: 'relative', height: '500px' }}
+          style={{ position: 'relative', height: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
-          {/* Abstract Data Visualization Representation */}
           <div className="glass-panel" style={{ 
-            position: 'absolute', 
-            top: '10%', right: '10%', 
-            width: '80%', height: '80%', 
+            width: '300px', height: '300px', 
             borderRadius: '50%',
-            background: 'radial-gradient(circle at center, var(--accent-emerald-glow) 0%, transparent 70%)',
+            background: 'radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            boxShadow: '0 0 50px rgba(6, 182, 212, 0.2)'
           }}>
-            <Database size={64} color="var(--accent-emerald)" style={{ opacity: 0.8 }} />
+            <Database size={80} color="var(--cyan)" style={{ opacity: 0.9 }} />
           </div>
           
           <motion.div 
-            animate={{ y: [0, -20, 0] }} 
+            animate={{ y: [0, -15, 0] }} 
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
             className="glass-panel" 
-            style={{ position: 'absolute', top: '20%', left: '0', padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center' }}
+            style={{ position: 'absolute', top: '15%', left: '-10%', padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center', background: 'rgba(15, 23, 42, 0.8)' }}
           >
-            <Activity color="var(--accent-purple)" />
             <div>
-              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Analyzed Records</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 700 }}>1M+ Rows</div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            animate={{ y: [0, 20, 0] }} 
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            className="glass-panel" 
-            style={{ position: 'absolute', bottom: '15%', right: '0', padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center' }}
-          >
-            <LineChart color="var(--accent-emerald)" />
-            <div>
-              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>BI Dashboards</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 700 }}>26+ Visuals</div>
+              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Processed</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--cyan)' }}>1M+ Rows</div>
             </div>
           </motion.div>
         </motion.div>
       </div>
+
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', color: 'var(--text-muted)' }}
+      >
+        <ChevronDown size={32} />
+      </motion.div>
     </section>
   );
 };
